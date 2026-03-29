@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esha Jha | AI Engineer & Web Developer</title>
+    <meta name="description"
+        content="Portfolio of Esha Jha — AI Engineer, Full-Stack Developer, and Hackathon Champion building intelligent web solutions.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+
+    <!-- Interactive Particle Canvas -->
+    <canvas id="constellation"></canvas>
+
+    <!-- Ambient Background -->
+    <div class="ambient">
+        <div class="ambient-orb orb-1"></div>
+        <div class="ambient-orb orb-2"></div>
+        <div class="ambient-orb orb-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="mainNav">
+        <div class="nav-logo" id="navLogo">EJ</div>
+        <div class="nav-links">
+            <a href="#projects">Projects</a>
+            <a href="#hackathons">Hackathons</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Fixed Social Bar -->
+    <ul class="social-bar" id="socialBar">
+        <li><a href="https://github.com/Eshajha19" target="_blank" title="GitHub"><i class="fab fa-github"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/esha-jha-7708b2298" target="_blank" title="LinkedIn"><i
+                    class="fab fa-linkedin"></i></a></li>
+        <li><a href="https://leetcode.com/u/jhaesha/" target="_blank" title="LeetCode"><i class="fas fa-code"></i></a>
+        </li>
+    </ul>
+
+    <!-- ═══════════ HERO — Split Layout ═══════════ -->
+    <header id="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-greeting">Hi, my name is</div>
+                <h1 class="hero-name">Esha Jha.</h1>
+                <div class="hero-role-line">
+                    I'm a <span class="role-rotator" id="roleRotator"></span><span class="role-cursor">|</span>
+                </div>
+                <p class="hero-desc">
+                    Third-year <strong>Computer Science Student (AI Specialization)</strong> at Galgotias College.
+                    I combine advanced AI algorithms with modern full-stack development to solve real-world problems.
+                </p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn-primary magnetic-btn">
+                        <span>View My Work</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="mailto:jha.esha2024@gmail.com" class="btn-ghost magnetic-btn">
+                        <span>Say Hello</span>
+                    </a>
+                </div>
+
+                <!-- Stats Row -->
+                <div class="stats-row" id="stats">
+                    <div class="stat">
+                        <span class="stat-number">#5</span>
+                        <span class="stat-desc">Unstop Eng. Rank</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">#12</span>
+                        <span class="stat-desc">Unstop Global</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">#2</span>
+                        <span class="stat-desc">Unstop Female</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">350+</span>
+                        <span class="stat-desc">LeetCode</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">5★</span>
+                        <span class="stat-desc">HackerRank</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="skills-orbit" id="skillsOrbit">
+                    <div class="orbit-center"><span>Skills</span></div>
+                    <div class="orbit-path orbit-path-1"></div>
+                    <div class="orbit-path orbit-path-2"></div>
+                    <div class="orbit-item ring1" data-ring="1" data-i="0">HTML</div>
+                    <div class="orbit-item ring1" data-ring="1" data-i="1">CSS</div>
+                    <div class="orbit-item ring1" data-ring="1" data-i="2">JS</div>
+                    <div class="orbit-item ring1" data-ring="1" data-i="3">React</div>
+                    <div class="orbit-item ring2" data-ring="2" data-i="0">Firebase</div>
+                    <div class="orbit-item ring2" data-ring="2" data-i="1">C++</div>
+                    <div class="orbit-item ring2" data-ring="2" data-i="2">Java</div>
+                    <div class="orbit-item ring2" data-ring="2" data-i="3">Machine Learning</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </header>
+
+    <!-- ═══════════ PROJECTS — Spotlight Layout ═══════════ -->
+    <section id="projects">
+        <div class="section-label reveal-up"><span>01</span> Featured Projects</div>
+
+        <!-- Featured Projects (Large) -->
+        <div class="featured-projects">
+            <a class="featured-card reveal-left" href="http://edunavia.netlify.app" target="_blank">
+                <div class="featured-card-glow"></div>
+                <div class="featured-accent"></div>
+                <div class="featured-body">
+                    <div class="featured-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>Edu Navia</h3>
+                    <p>Comprehensive web portal for university search, counselor booking, and user management via
+                        Firebase.</p>
+                    <div class="featured-tech">
+                        <span>JavaScript</span>
+                        <span>Firebase</span>
+                    </div>
+                </div>
+                <div class="featured-link">
+                    <i class="fas fa-external-link-alt"></i>
+                </div>
+            </a>
+
+            <a class="featured-card reveal-right" href="https://agriagent-zeta.vercel.app" target="_blank">
+                <div class="featured-card-glow"></div>
+                <div class="featured-accent accent-violet"></div>
+                <div class="featured-body">
+                    <div class="featured-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Fasal Saathi</h3>
+                    <p>AI-driven agricultural support system analyzing environmental data to deliver actionable insights
+                        for improving crop yield.</p>
+                    <div class="featured-tech">
+                        <span>React</span>
+                        <span>FastAPI</span>
+                        <span>Uvicorn</span>
+                        <span>AI Models</span>
+                    </div>
+                </div>
+                <div class="featured-link">
+                    <i class="fas fa-external-link-alt"></i>
+                </div>
+            </a>
+        </div>
+
+        <!-- Other Projects (Compact Grid) -->
+        <div class="projects-compact">
+            <div class="compact-card reveal-up">
+                <div class="compact-top">
+                    <i class="fas fa-eye compact-icon"></i>
+                </div>
+                <h4>SentriVision</h4>
+                <p>Real-time smart surveillance using YOLO models to detect illegal activities with tamper-proof
+                    evidence storage.</p>
+                <div class="compact-tech">
+                    <span>React</span><span>YOLO</span><span>Node.js</span><span>OpenCV</span>
+                </div>
+            </div>
+
+            <a class="compact-card reveal-up" href="http://weatherfind09.netlify.app" target="_blank">
+                <div class="compact-top">
+                    <i class="fas fa-cloud-sun compact-icon"></i>
+                    <i class="fas fa-external-link-alt compact-ext"></i>
+                </div>
+                <h4>Weather Dashboard</h4>
+                <p>Real-time weather forecast application utilizing OpenWeather API with geolocation support.</p>
+                <div class="compact-tech">
+                    <span>API Integration</span><span>Geolocation</span><span>CSS Grid</span>
+                </div>
+            </a>
+
+            <a class="compact-card reveal-up" href="http://myportfolioproject19.netlify.app" target="_blank">
+                <div class="compact-top">
+                    <i class="fas fa-user-circle compact-icon"></i>
+                    <i class="fas fa-external-link-alt compact-ext"></i>
+                </div>
+                <h4>Portfolio Website</h4>
+                <p>Personal brand showcase featuring interactive UI, 3D animations, and responsive design.</p>
+                <div class="compact-tech">
+                    <span>HTML/CSS</span><span>JavaScript</span><span>UI/UX</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- ═══════════ HACKATHONS — Horizontal Timeline ═══════════ -->
+    <section id="hackathons">
+        <div class="section-label reveal-up"><span>02</span> Experience & Hackathons</div>
+
+        <div class="timeline-wrapper">
+            <button class="timeline-arrow timeline-prev" aria-label="Previous"><i
+                    class="fas fa-chevron-left"></i></button>
+            <div class="timeline-track" id="timelineTrack">
+                <div class="timeline-line"></div>
+
+                <a class="timeline-card"
+                    href="https://drive.google.com/file/d/1IOT-5wAC13-a7dg-zVNsRdJ-p0z9qE_Y/view?usp=sharing"
+                    target="_blank">
+                    <div class="timeline-dot winner"></div>
+                    <div class="timeline-badge">🏆 Winner</div>
+                    <h4>She Builds Hackathon</h4>
+                    <p>Winner of the Hover Robotix Track. Built a control interface for educational robots as part of
+                        Team Terminal Three.</p>
+                    <div class="timeline-meta"><span>Robotics</span></div>
+                </a>
+
+                <a class="timeline-card"
+                    href="https://drive.google.com/file/d/1UO7mxODiNpdiH0E7vGhZTAr5ElCBwwQg/view?usp=drive_link"
+                    target="_blank">
+                    <div class="timeline-dot winner"></div>
+                    <div class="timeline-badge">🌐 WCHL 2025</div>
+                    <h4>World Computer Hacker League</h4>
+                    <p>Qualified as Regional Participant with project Edu Navia. Recognized by the ICP community for
+                        technical excellence.</p>
+                    <div class="timeline-meta"><span>Regional Qualifier</span><span>India</span></div>
+                </a>
+
+                <a class="timeline-card"
+                    href="https://drive.google.com/file/d/1NzGWVO0Sa9lCs615K_27G6LIKYyhXH44/view?usp=sharing"
+                    target="_blank">
+                    <div class="timeline-dot finalist"></div>
+                    <div class="timeline-badge">🔥 Top 40</div>
+                    <h4>Paranox 2.0</h4>
+                    <p>Top 40 Finalist out of 1,552 projects / 20,119 students in the national Innovation Hackathon with
+                        "Academic Atlas."</p>
+                    <div class="timeline-meta"><span>Top 40 Finalist</span><span>National</span></div>
+                </a>
+
+                <div class="timeline-card">
+                    <div class="timeline-dot finalist"></div>
+                    <div class="timeline-badge">❄️ Rank #23</div>
+                    <h4>Elite Coder Winter of Code</h4>
+                    <p>Received Rank 23 out of 5,000 contributors. Delivered high-quality open-source contributions
+                        across multiple projects.</p>
+                    <div class="timeline-meta"><span>Open Source</span><span>Top 0.5%</span></div>
+                </div>
+
+                <div class="timeline-card">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-badge">📊 Top 4%</div>
+                    <h4>Code for Bharat</h4>
+                    <p>Ranked Top 398 out of 10,000+ teams. Solved complex algorithmic challenges for Team Academic
+                        Atlas.</p>
+                    <div class="timeline-meta"><span>Algorithms</span></div>
+                </div>
+
+                <div class="timeline-card">
+                    <div class="timeline-dot finalist"></div>
+                    <div class="timeline-badge">🎯 Finalist</div>
+                    <h4>Crave for Code</h4>
+                    <p>Finalist among the top 38 teams in this competitive coding hackathon.</p>
+                    <div class="timeline-meta"><span>Coding</span></div>
+                </div>
+
+                <a class="timeline-card"
+                    href="https://drive.google.com/file/d/1Yz87tN3YDuDWU88tgKGP0nhFM_tc0cke/view?usp=sharing"
+                    target="_blank">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-badge">🎨 IIT BBS</div>
+                    <h4>Frontend Battle 2.0</h4>
+                    <p>Organized by IIT Bhubaneshwar. Created high-fidelity interactive web designs.</p>
+                    <div class="timeline-meta"><span>IIT Bhubaneshwar</span></div>
+                </a>
+
+                <div class="timeline-card">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-badge">💻</div>
+                    <h4>Call2Code & More</h4>
+                    <p>Participant in Call2Code, TechHer, and CodeClash — diversity and competitive coding hackathons.
+                    </p>
+                    <div class="timeline-meta"><span>Coding</span><span>Community</span></div>
+                </div>
+            </div>
+            <button class="timeline-arrow timeline-next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider divider-reverse"></div>
+
+    <!-- ═══════════ CERTIFICATIONS ═══════════ -->
+    <section id="certifications">
+        <div class="section-label reveal-up"><span>03</span> Certifications</div>
+
+        <div class="cert-grid">
+            <a class="cert-card reveal-up" href="https://www.guvi.in/verify-certificate?id=7j097gn64X0l315DW7"
+                target="_blank">
+                <i class="fas fa-certificate cert-icon"></i>
+                <h4>SAWIT AI</h4>
+                <p>GUVI - Artificial Intelligence Track</p>
+                <div class="cert-tags"><span>AI</span><span>GUVI</span></div>
+                <i class="fas fa-external-link-alt cert-ext"></i>
+            </a>
+
+            <a class="cert-card reveal-up" href="https://www.hackerrank.com/certificates/4c515042bac7" target="_blank">
+                <i class="fab fa-python cert-icon"></i>
+                <h4>Python (5 Stars)</h4>
+                <p>HackerRank proficiency certification</p>
+                <div class="cert-tags"><span>HackerRank</span></div>
+                <i class="fas fa-external-link-alt cert-ext"></i>
+            </a>
+
+            <div class="cert-card reveal-up">
+                <i class="fas fa-brain cert-icon"></i>
+                <h4>HackerRank C (3 Stars)</h4>
+                <p>Achieved 3 Star Badge in C</p>
+                <div class="cert-tags"><span>Logic</span><span>C Lang</span></div>
+            </div>
+
+            <div class="cert-card reveal-up">
+                <i class="fas fa-shapes cert-icon"></i>
+                <h4>Infosys Springboard</h4>
+                <p>Generative AI, DSA, Java OOPS, HTML</p>
+                <div class="cert-tags"><span>Infosys</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- ═══════════ CODING & GITHUB STATS ═══════════ -->
+    <section id="github">
+        <div class="section-label reveal-up"><span>04</span> Coding & GitHub Stats</div>
+
+        <div class="github-stats-grid">
+
+            <!-- LeetCode Stats -->
+            <div class="github-card reveal-left">
+                <img src="https://leetcard.jacoblin.cool/jhaesha?theme=dark&font=Space%20Grotesk&ext=heatmap&border=0&radius=12"
+                    alt="LeetCode Stats" loading="lazy" />
+            </div>
+
+            <!-- Unstop Stats (Custom Card — no public API) -->
+            <div class="github-card unstop-card reveal-right">
+                <div class="unstop-inner">
+                    <div class="unstop-header">
+                        <i class="fas fa-award unstop-icon"></i>
+                        <h4>Unstop Rankings</h4>
+                        <a href="https://unstop.com/u/eshajha1117" target="_blank" class="unstop-link"><i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="unstop-stats">
+                        <div class="unstop-stat">
+                            <span class="unstop-val">#5</span>
+                            <span class="unstop-label">Engineering Rank</span>
+                        </div>
+                        <div class="unstop-stat">
+                            <span class="unstop-val">#12</span>
+                            <span class="unstop-label">Global Rank</span>
+                        </div>
+                        <div class="unstop-stat">
+                            <span class="unstop-val">#2</span>
+                            <span class="unstop-label">Female Rank</span>
+                        </div>
+                    </div>
+                    <div class="unstop-badges">
+                        <div class="unstop-badge"><i class="fas fa-star"></i> 5★ Badge</div>
+                        <div class="unstop-badge"><i class="fas fa-trophy"></i> 8+ Hackathons</div>
+                        <div class="unstop-badge"><i class="fas fa-coins"></i> 500+ Coins</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GitHub Streak -->
+            <div class="github-card github-card-wide reveal-up">
+                <img src="https://github-readme-streak-stats.herokuapp.com/?user=Eshajha19&theme=transparent&hide_border=true&ring=64ffda&fire=a78bfa&currStreakLabel=64ffda&sideLabels=8892b0&currStreakNum=e2e8f0&sideNums=e2e8f0&dates=4a5568&background=00000000"
+                    alt="GitHub Streak" loading="lazy" />
+            </div>
+
+            <!-- Contribution Graph -->
+            <div class="github-card github-card-wide reveal-up">
+                <img src="https://github-readme-activity-graph.vercel.app/graph?username=Eshajha19&bg_color=00000000&color=8892b0&line=64ffda&point=a78bfa&area_color=64ffda&area=true&hide_border=true&custom_title=Contribution%20Graph"
+                    alt="Contribution Graph" loading="lazy" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider divider-reverse"></div>
+
+    <!-- ═══════════ EDUCATION & CONTACT — Bento Grid ═══════════ -->
+    <section id="contact">
+        <div class="section-label reveal-up"><span>05</span> Education & Contact</div>
+
+        <div class="bento-grid">
+            <!-- Education Cards -->
+            <div class="bento-card bento-edu reveal-left">
+                <div class="bento-card-icon"><i class="fas fa-university"></i></div>
+                <div class="bento-card-content">
+                    <h4>B.Tech CSE — AI</h4>
+                    <p class="bento-sub">Galgotias College of Engineering & Technology</p>
+                    <span class="bento-accent">2023 – 2027</span>
+                </div>
+            </div>
+
+            <div class="bento-card bento-edu reveal-right">
+                <div class="bento-card-icon"><i class="fas fa-school"></i></div>
+                <div class="bento-card-content">
+                    <h4>12th Grade</h4>
+                    <p class="bento-sub">Little Flower House School</p>
+                    <span class="bento-accent">93%</span>
+                </div>
+            </div>
+
+            <!-- Contact Form Card -->
+            <div class="bento-card bento-form-card reveal-up">
+                <div class="form-header">
+                    <h3>Let's Work Together <span class="form-emoji">🚀</span></h3>
+                    <p>Currently looking for internships. Drop a message and I'll get back to you!</p>
+                </div>
+
+                <div class="contact-info-row">
+                    <a href="mailto:jha.esha2024@gmail.com" class="contact-chip">
+                        <i class="fas fa-envelope"></i> jha.esha2024@gmail.com
+                    </a>
+                    <a href="tel:+917979593857" class="contact-chip">
+                        <i class="fas fa-phone"></i> +91 8707086505
+                    </a>
+                </div>
+
+                <form id="contactForm" class="contact-form" action="https://formspree.io/f/mpqopykk" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="formName" name="name" required autocomplete="name" placeholder=" " />
+                            <label for="formName">Your Name</label>
+                            <div class="form-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="formEmail" name="email" required autocomplete="email"
+                                placeholder=" " />
+                            <label for="formEmail">Your Email</label>
+                            <div class="form-line"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="formMsg" name="message" rows="4" required placeholder=" "></textarea>
+                        <label for="formMsg">Your Message</label>
+                        <div class="form-line"></div>
+                    </div>
+                    <button type="submit" class="btn-primary magnetic-btn form-submit" id="formSubmitBtn">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                    <div class="form-status" id="formStatus"></div>
+                </form>
+            </div>
+
+            <!-- Profile Links -->
+            <div class="bento-card bento-links reveal-up">
+                <h4>Profiles</h4>
+                <div class="profile-links">
+                    <a href="https://leetcode.com/u/jhaesha/" target="_blank"><i class="fas fa-code"></i> LeetCode</a>
+                    <a href="https://www.geeksforgeeks.org/profile/jhaeshvcjh" target="_blank"><i
+                            class="fas fa-book"></i> GeeksforGeeks</a>
+                    <a href="https://www.hackerrank.com/profile/jha_esha2024" target="_blank"><i
+                            class="fas fa-laptop-code"></i> HackerRank</a>
+                    <a href="https://unstop.com/u/eshajha1117" target="_blank"><i class="fas fa-award"></i> Unstop</a>
+                    <a href="https://www.naukri.com/code360/profile/EshaJha" target="_blank"><i
+                            class="fas fa-graduation-cap"></i> Code360</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Designed & Built by <span>Esha Jha</span></p>
+        <p class="footer-tagline">Building intelligence, one line at a time.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
