@@ -974,3 +974,46 @@ footer p span { color: var(--accent); }
     .unstop-label { font-size: 0.6rem; }
     .contact-chip { font-size: 0.78rem; padding: 8px 16px; }
 }
+/* Project Links */
+.project-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.project-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: all 0.35s var(--ease);
+}
+
+.project-links a:hover {
+    transform: translateY(-3px);
+    color: var(--accent);
+    border-color: rgba(100,255,218,0.3);
+    background: var(--accent-dim);
+    box-shadow: 0 10px 25px -10px rgba(100,255,218,0.25);
+}
+
+.project-links a i {
+    font-size: 0.9rem;
+}
+
+/* Violet variant for second featured card */
+.featured-card:nth-child(2) .project-links a:hover {
+    color: var(--violet);
+    border-color: rgba(167,139,250,0.3);
+    background: var(--violet-dim);
+    box-shadow: 0 10px 25px -10px rgba(167,139,250,0.25);
+}
