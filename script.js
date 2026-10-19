@@ -5,6 +5,41 @@
    timeline navigation, dynamic navbar
    ════════════════════════════════════════════ */
 
+// ═══════ 0. COLOR THEME ═══════
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = themeToggle?.querySelector('i');
+let savedTheme = 'dark';
+
+try {
+    savedTheme = window.localStorage.getItem('portfolio-theme') || 'dark';
+} catch (error) {
+    console.warn('Unable to read the saved color theme.', error);
+}
+
+function applyTheme(theme, persist = false) {
+    const isLight = theme === 'light';
+    document.documentElement.dataset.theme = isLight ? 'light' : 'dark';
+    themeToggle?.setAttribute('aria-pressed', String(isLight));
+    themeToggle?.setAttribute('aria-label', `Switch to ${isLight ? 'dark' : 'light'} mode`);
+    themeToggle?.setAttribute('title', `Switch to ${isLight ? 'dark' : 'light'} mode`);
+    if (themeIcon) {
+        themeIcon.className = `fas fa-${isLight ? 'moon' : 'sun'}`;
+    }
+
+    if (persist) {
+        try {
+            window.localStorage.setItem('portfolio-theme', isLight ? 'light' : 'dark');
+        } catch (error) {
+            console.warn('Unable to save the selected color theme.', error);
+        }
+    }
+}
+
+applyTheme(savedTheme);
+themeToggle?.addEventListener('click', () => {
+    applyTheme(document.documentElement.dataset.theme === 'light' ? 'dark' : 'light', true);
+});
+
 // ═══════ 1. INTERACTIVE PARTICLE CONSTELLATION ═══════
 // Signature feature: particles form neural-network-like connections near the cursor
 const canvas = document.getElementById('constellation');

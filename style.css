@@ -180,6 +180,27 @@ nav.nav-scrolled {
 .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
 .nav-links a.active::after { opacity: 1; }
 
+.theme-toggle {
+    display: grid;
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--accent);
+    font-size: 0.9rem;
+    cursor: none;
+    transition: color 0.25s, background 0.25s, border-color 0.25s, transform 0.25s;
+}
+
+.theme-toggle:hover {
+    border-color: var(--accent);
+    background: var(--accent-dim);
+    transform: rotate(12deg);
+}
+
 /* ═══════ HERO SECTION ═══════ */
 header {
     min-height: 100vh; display: flex; flex-direction: column;
@@ -1140,7 +1161,7 @@ footer p span { color: var(--accent); }
 }
 
 @media (max-width: 480px) {
-    nav { padding-inline: 8px; }
+    nav { width: 96%; padding-inline: 8px; }
     .nav-links { gap: clamp(5px, 1.5vw, 7px); }
     .nav-links a { font-size: clamp(0.6rem, 2.4vw, 0.7rem); }
 
@@ -2412,4 +2433,156 @@ footer p span {
     .algo-pulse {
         animation: none;
     }
+}
+
+/* ═══════ LIGHT THEME ═══════ */
+:root[data-theme="light"] {
+    color-scheme: light;
+    --bg-deep: #f3f6fb;
+    --bg-surface: #ffffff;
+    --accent: #087f70;
+    --accent-dim: rgba(8, 127, 112, 0.08);
+    --accent-glow: rgba(8, 127, 112, 0.22);
+    --violet: #6946b5;
+    --violet-dim: rgba(105, 70, 181, 0.08);
+    --violet-glow: rgba(105, 70, 181, 0.2);
+    --glass: rgba(255, 255, 255, 0.82);
+    --glass-border: rgba(36, 52, 76, 0.14);
+    --text-primary: #182438;
+    --text-secondary: #4f5f75;
+    --text-muted: #718096;
+    --rose: #bd477f;
+}
+
+:root[data-theme="light"] body {
+    background:
+        radial-gradient(ellipse at 15% 12%, rgba(8, 127, 112, 0.055), transparent 34rem),
+        radial-gradient(ellipse at 87% 34%, rgba(105, 70, 181, 0.055), transparent 38rem),
+        radial-gradient(ellipse at 55% 88%, rgba(189, 71, 127, 0.03), transparent 34rem),
+        var(--bg-deep);
+}
+
+:root[data-theme="light"] nav,
+:root[data-theme="light"] nav.nav-scrolled {
+    background: rgba(255, 255, 255, 0.88);
+    border-color: var(--glass-border);
+    box-shadow: 0 12px 36px rgba(31, 49, 76, 0.12);
+}
+
+:root[data-theme="light"] .theme-toggle {
+    color: var(--text-primary);
+}
+
+:root[data-theme="light"] .theme-toggle:hover {
+    background: var(--accent-dim);
+    color: var(--accent);
+}
+
+:root[data-theme="light"] .hero-greeting {
+    border-color: rgba(8, 127, 112, 0.2);
+    background: linear-gradient(100deg, rgba(8, 127, 112, 0.08), rgba(105, 70, 181, 0.06));
+    color: var(--accent);
+}
+
+:root[data-theme="light"] .hero-name {
+    background-image: linear-gradient(105deg, #182438 12%, #087f70 52%, #6946b5 88%);
+}
+
+:root[data-theme="light"] .role-rotator {
+    background-image: linear-gradient(100deg, var(--accent), #3976a8 55%, var(--violet));
+}
+
+:root[data-theme="light"] .btn-ghost {
+    border-color: rgba(105, 70, 181, 0.18);
+    background: linear-gradient(120deg, rgba(8, 127, 112, 0.07), rgba(105, 70, 181, 0.07));
+    color: var(--violet);
+}
+
+:root[data-theme="light"] .btn-ghost:hover {
+    border-color: rgba(105, 70, 181, 0.45);
+    background: linear-gradient(120deg, rgba(8, 127, 112, 0.12), rgba(105, 70, 181, 0.12));
+}
+
+:root[data-theme="light"] .stat {
+    border-color: var(--glass-border);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.58));
+}
+
+:root[data-theme="light"] .stat:hover {
+    border-color: rgba(8, 127, 112, 0.3);
+    background: linear-gradient(145deg, rgba(8, 127, 112, 0.06), rgba(105, 70, 181, 0.04));
+}
+
+:root[data-theme="light"] .stat-number {
+    background-image: linear-gradient(120deg, #182438, var(--accent), var(--violet));
+}
+
+:root[data-theme="light"] .orbit-center {
+    background: radial-gradient(circle at 35% 25%, rgba(8, 127, 112, 0.14), rgba(255, 255, 255, 0.94) 72%);
+    border-color: rgba(8, 127, 112, 0.24);
+}
+
+:root[data-theme="light"] .featured-card,
+:root[data-theme="light"] .compact-card,
+:root[data-theme="light"] .timeline-card,
+:root[data-theme="light"] .cert-card,
+:root[data-theme="light"] .github-card,
+:root[data-theme="light"] .bento-card {
+    border-color: var(--glass-border);
+    background-color: rgba(255, 255, 255, 0.82);
+    box-shadow: 0 14px 38px -30px rgba(31, 49, 76, 0.42);
+}
+
+:root[data-theme="light"] .featured-card:hover,
+:root[data-theme="light"] .compact-card:hover,
+:root[data-theme="light"] .timeline-card:hover,
+:root[data-theme="light"] .cert-card:hover,
+:root[data-theme="light"] .github-card:hover,
+:root[data-theme="light"] .bento-card:hover {
+    border-color: rgba(8, 127, 112, 0.34);
+}
+
+:root[data-theme="light"] .bento-form-card {
+    background:
+        radial-gradient(ellipse at 10% 0%, rgba(8, 127, 112, 0.07), transparent 40%),
+        radial-gradient(ellipse at 100% 100%, rgba(105, 70, 181, 0.07), transparent 44%),
+        rgba(255, 255, 255, 0.9);
+}
+
+:root[data-theme="light"] .encouragement-note {
+    border-color: rgba(105, 70, 181, 0.18);
+    background: linear-gradient(115deg, rgba(255, 255, 255, 0.96), rgba(245, 242, 252, 0.94));
+    box-shadow: 0 18px 50px rgba(31, 49, 76, 0.12), inset 0 1px rgba(255, 255, 255, 0.8);
+}
+
+:root[data-theme="light"] .journey-banner {
+    border-color: rgba(105, 70, 181, 0.18);
+    background:
+        radial-gradient(ellipse at 88% 50%, rgba(105, 70, 181, 0.1), transparent 34%),
+        radial-gradient(ellipse at 8% 0%, rgba(8, 127, 112, 0.07), transparent 43%),
+        linear-gradient(115deg, rgba(255, 255, 255, 0.98), rgba(247, 245, 252, 0.96));
+    box-shadow: 0 22px 70px -38px rgba(31, 49, 76, 0.3), inset 0 1px rgba(255, 255, 255, 0.9);
+}
+
+:root[data-theme="light"] .journey-core {
+    color: var(--accent);
+}
+
+:root[data-theme="light"] .edu-window {
+    border-color: rgba(36, 52, 76, 0.16);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(238, 243, 250, 0.96));
+    box-shadow: 0 22px 50px rgba(31, 49, 76, 0.16), 0 0 34px rgba(8, 127, 112, 0.05);
+}
+
+:root[data-theme="light"] .visual-float,
+:root[data-theme="light"] .farm-data {
+    border-color: rgba(36, 52, 76, 0.15);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 10px 24px rgba(31, 49, 76, 0.12);
+}
+
+:root[data-theme="light"] .algo-node {
+    border-color: rgba(57, 118, 168, 0.3);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(235, 241, 250, 0.96));
+    box-shadow: 0 0 22px rgba(57, 118, 168, 0.1);
 }
