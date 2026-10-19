@@ -39,10 +39,15 @@
         <div class="nav-logo" id="navLogo">EJ</div>
         <div class="nav-links">
             <a href="#projects">Projects</a>
+            <a href="#achievements">Achievements</a>
             <a href="#hackathons">Hackathons</a>
             <a href="#certifications">Certifications</a>
             <a href="#contact">Contact</a>
         </div>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode"
+            aria-pressed="false" title="Switch to light mode">
+            <i class="fas fa-sun" aria-hidden="true"></i>
+        </button>
     </nav>
 
     <!-- Fixed Social Bar -->
@@ -119,11 +124,33 @@
             </div>
         </div>
 
+        <aside class="encouragement-note" aria-label="A little encouragement">
+            <span class="encouragement-icon"><i class="fas fa-sparkles"></i></span>
+            <span class="encouragement-copy">
+                <span class="encouragement-label">A note for your journey</span>
+                <span class="encouragement-message" id="encouragementMessage">Keep showing up. Your next idea matters.</span>
+            </span>
+            <span class="encouragement-orbit" aria-hidden="true"></span>
+        </aside>
+
         <div class="scroll-indicator">
             <span>Scroll</span>
             <div class="scroll-line"></div>
         </div>
     </header>
+
+    <div class="motivation-ribbon" aria-hidden="true">
+        <div class="motivation-track" aria-hidden="true">
+            <span>Keep learning</span><i class="fas fa-sparkles"></i>
+            <span>Keep building</span><i class="fas fa-arrow-trend-up"></i>
+            <span>Trust your progress</span><i class="fas fa-heart"></i>
+            <span>Small steps. Big things.</span><i class="fas fa-sparkles"></i>
+            <span>Keep learning</span><i class="fas fa-sparkles"></i>
+            <span>Keep building</span><i class="fas fa-arrow-trend-up"></i>
+            <span>Trust your progress</span><i class="fas fa-heart"></i>
+            <span>Small steps. Big things.</span><i class="fas fa-sparkles"></i>
+        </div>
+    </div>
 
     <!-- ═══════════ PROJECTS — Spotlight Layout ═══════════ -->
     <section id="projects">
@@ -168,6 +195,22 @@
             </a>
         </div>
     </div>
+    <div class="project-visual project-visual-edu" aria-hidden="true">
+        <div class="visual-orbit visual-orbit-outer"></div>
+        <div class="visual-orbit visual-orbit-inner"></div>
+        <div class="edu-window">
+            <div class="edu-window-bar"><span></span><span></span><span></span></div>
+            <div class="edu-window-content">
+                <div class="edu-cap"><i class="fas fa-graduation-cap"></i></div>
+                <div class="edu-line edu-line-long"></div>
+                <div class="edu-line edu-line-short"></div>
+                <div class="edu-progress"><span></span></div>
+                <div class="edu-window-foot"><i class="fas fa-book-open"></i><i class="fas fa-user-graduate"></i><i class="fas fa-circle-check"></i></div>
+            </div>
+        </div>
+        <span class="visual-float visual-float-one"><i class="fas fa-book-open"></i> Learn</span>
+        <span class="visual-float visual-float-two"><i class="fas fa-circle-check"></i> Explore</span>
+    </div>
 </div>
            <div class="featured-card reveal-right">
     <div class="featured-card-glow"></div>
@@ -204,6 +247,16 @@
                 GitHub
             </a>
         </div>
+    </div>
+    <div class="project-visual project-visual-farm" aria-hidden="true">
+        <div class="farm-sun"></div>
+        <div class="farm-halo farm-halo-one"></div>
+        <div class="farm-halo farm-halo-two"></div>
+        <div class="farm-ground"></div>
+        <div class="farm-stem"><span></span><span></span></div>
+        <i class="fas fa-seedling farm-plant"></i>
+        <span class="farm-data farm-data-weather"><i class="fas fa-cloud-sun"></i> 24°</span>
+        <span class="farm-data farm-data-growth"><i class="fas fa-arrow-trend-up"></i> Growing</span>
     </div>
 </div>
             <div class="featured-card reveal-left">
@@ -242,6 +295,18 @@
                 GitHub
             </a>
         </div>
+    </div>
+    <div class="project-visual project-visual-algo" aria-hidden="true">
+        <div class="algo-grid"></div>
+        <svg class="algo-connections" viewBox="0 0 300 220" role="presentation">
+            <path d="M46 110 112 62 184 96 252 48M46 110l66 48 72-52 68 66M112 62l0 96M184 96l0 52" />
+        </svg>
+        <span class="algo-node algo-node-one"><i class="fas fa-code"></i></span>
+        <span class="algo-node algo-node-two">O(n)</span>
+        <span class="algo-node algo-node-three"><i class="fas fa-diagram-project"></i></span>
+        <span class="algo-node algo-node-four">01</span>
+        <span class="algo-node algo-node-five"><i class="fas fa-bolt"></i></span>
+        <span class="algo-pulse"></span>
     </div>
 </div>
         </div>
@@ -289,10 +354,81 @@
     <!-- Section Divider -->
     <div class="section-divider"></div>
 
+    <!-- ═══════════ ACHIEVEMENTS — LinkedIn Highlights ═══════════ -->
+    <section id="achievements">
+        <div class="section-label reveal-up"><span>02</span> Community Leadership & Recognition</div>
+        <p class="section-intro reveal-up">Leadership and top placements across developer community programs.
+            Explore each original LinkedIn announcement below.</p>
+
+        <div class="achievement-grid">
+            <article class="achievement-card reveal-up">
+                <div class="achievement-card-top">
+                    <span class="achievement-rank rank-bronze"><i class="fas fa-medal"></i> 3rd Project Administrator</span>
+                    <span class="achievement-number">01 / 03</span>
+                </div>
+                <h3>Elite Coders<br>Summer of Code</h3>
+                <p class="achievement-role">Community leadership</p>
+                <div class="linkedin-embed-shell">
+                    <iframe
+                        src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7510362358066708480/"
+                        title="LinkedIn post: 3rd Project Administrator in Elite Coders Summer of Code"
+                        loading="lazy" allowfullscreen></iframe>
+                </div>
+                <a class="achievement-link"
+                    href="https://www.linkedin.com/feed/update/urn:li:activity:7510362358066708480/"
+                    target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i> View LinkedIn post <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </article>
+
+            <article class="achievement-card achievement-card-featured reveal-up">
+                <div class="achievement-card-top">
+                    <span class="achievement-rank rank-gold"><i class="fas fa-trophy"></i> 1st Place</span>
+                    <span class="achievement-number">02 / 03</span>
+                </div>
+                <h3>Social Summer<br>of Code</h3>
+                <p class="achievement-role">Community contribution</p>
+                <div class="linkedin-embed-shell">
+                    <iframe
+                        src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7495082282056323073/"
+                        title="LinkedIn post: 1st place in Social Summer of Code"
+                        loading="lazy" allowfullscreen></iframe>
+                </div>
+                <a class="achievement-link"
+                    href="https://www.linkedin.com/feed/update/urn:li:activity:7495082282056323073/"
+                    target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i> View LinkedIn post <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </article>
+
+            <article class="achievement-card reveal-up">
+                <div class="achievement-card-top">
+                    <span class="achievement-rank rank-silver"><i class="fas fa-medal"></i> 2nd Place</span>
+                    <span class="achievement-number">03 / 03</span>
+                </div>
+                <h3>Nexus Spring<br>of Code</h3>
+                <p class="achievement-role">Community contribution</p>
+                <div class="linkedin-embed-shell">
+                    <iframe
+                        src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7476153939189723136/"
+                        title="LinkedIn post: 2nd place in Nexus Spring of Code"
+                        loading="lazy" allowfullscreen></iframe>
+                </div>
+                <a class="achievement-link"
+                    href="https://www.linkedin.com/feed/update/urn:li:activity:7476153939189723136/"
+                    target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i> View LinkedIn post <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </article>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider divider-reverse"></div>
+
     <!-- ═══════════ HACKATHONS — Horizontal Timeline ═══════════ -->
     <section id="hackathons">
-        <div class="section-label reveal-up"><span>02</span> Experience & Hackathons</div>
-
+        <div class="section-label reveal-up"><span>03</span> Experience & Hackathons</div>
         <div class="timeline-wrapper">
             <button class="timeline-arrow timeline-prev" aria-label="Previous"><i
                     class="fas fa-chevron-left"></i></button>
@@ -386,7 +522,7 @@
 
     <!-- ═══════════ CERTIFICATIONS ═══════════ -->
     <section id="certifications">
-        <div class="section-label reveal-up"><span>03</span> Certifications</div>
+        <div class="section-label reveal-up"><span>04</span> Certifications</div>
 
         <div class="cert-grid">
             <a class="cert-card reveal-up" href="https://www.guvi.in/verify-certificate?id=7j097gn64X0l315DW7"
@@ -427,7 +563,7 @@
 
     <!-- ═══════════ CODING & GITHUB STATS ═══════════ -->
     <section id="github">
-        <div class="section-label reveal-up"><span>04</span> Coding & GitHub Stats</div>
+        <div class="section-label reveal-up"><span>05</span> Coding & GitHub Stats</div>
 
         <div class="github-stats-grid">
 
@@ -474,20 +610,35 @@
                     alt="GitHub Streak" loading="lazy" />
             </div>
 
-            <!-- Contribution Graph -->
-            <div class="github-card github-card-wide reveal-up">
-                <img src="https://github-readme-activity-graph.vercel.app/graph?username=Eshajha19&bg_color=00000000&color=8892b0&line=64ffda&point=a78bfa&area_color=64ffda&area=true&hide_border=true&custom_title=Contribution%20Graph"
-                    alt="Contribution Graph" loading="lazy" />
-            </div>
         </div>
     </section>
+
+    <aside class="journey-banner reveal-up" aria-label="Encouragement and contact">
+        <div class="journey-banner-copy">
+            <span class="journey-kicker"><i class="fas fa-wand-magic-sparkles"></i> Keep going</span>
+            <h2>Your next idea could be your <span>best one yet.</span></h2>
+            <p>Every project starts with a spark. Keep learning, keep building, and see where it takes you.</p>
+            <a href="#contact" class="journey-cta">
+                Let’s build something <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+        <div class="journey-art" aria-hidden="true">
+            <div class="journey-ring journey-ring-one"></div>
+            <div class="journey-ring journey-ring-two"></div>
+            <div class="journey-ring journey-ring-three"></div>
+            <span class="journey-star journey-star-one">✦</span>
+            <span class="journey-star journey-star-two">✧</span>
+            <span class="journey-star journey-star-three">✦</span>
+            <div class="journey-core"><i class="fas fa-lightbulb"></i></div>
+        </div>
+    </aside>
 
     <!-- Section Divider -->
     <div class="section-divider divider-reverse"></div>
 
     <!-- ═══════════ EDUCATION & CONTACT — Bento Grid ═══════════ -->
     <section id="contact">
-        <div class="section-label reveal-up"><span>05</span> Education & Contact</div>
+        <div class="section-label reveal-up"><span>06</span> Education & Contact</div>
 
         <div class="bento-grid">
             <!-- Education Cards -->

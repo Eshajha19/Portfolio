@@ -5,6 +5,41 @@
    timeline navigation, dynamic navbar
    ════════════════════════════════════════════ */
 
+// ═══════ 0. COLOR THEME ═══════
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = themeToggle?.querySelector('i');
+let savedTheme = 'dark';
+
+try {
+    savedTheme = window.localStorage.getItem('portfolio-theme') || 'dark';
+} catch (error) {
+    console.warn('Unable to read the saved color theme.', error);
+}
+
+function applyTheme(theme, persist = false) {
+    const isLight = theme === 'light';
+    document.documentElement.dataset.theme = isLight ? 'light' : 'dark';
+    themeToggle?.setAttribute('aria-pressed', String(isLight));
+    themeToggle?.setAttribute('aria-label', `Switch to ${isLight ? 'dark' : 'light'} mode`);
+    themeToggle?.setAttribute('title', `Switch to ${isLight ? 'dark' : 'light'} mode`);
+    if (themeIcon) {
+        themeIcon.className = `fas fa-${isLight ? 'moon' : 'sun'}`;
+    }
+
+    if (persist) {
+        try {
+            window.localStorage.setItem('portfolio-theme', isLight ? 'light' : 'dark');
+        } catch (error) {
+            console.warn('Unable to save the selected color theme.', error);
+        }
+    }
+}
+
+applyTheme(savedTheme);
+themeToggle?.addEventListener('click', () => {
+    applyTheme(document.documentElement.dataset.theme === 'light' ? 'dark' : 'light', true);
+});
+
 // ═══════ 1. INTERACTIVE PARTICLE CONSTELLATION ═══════
 // Signature feature: particles form neural-network-like connections near the cursor
 const canvas = document.getElementById('constellation');
@@ -101,7 +136,9 @@ document.addEventListener('mousemove', e => {
 
 window.addEventListener('resize', initCanvas);
 initCanvas();
-drawConstellation();
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    drawConstellation();
+}
 
 
 // ═══════ 2. CUSTOM CURSOR ═══════
@@ -124,7 +161,7 @@ if (cursor && cursorDot) {
     });
 
     // Hover detection
-    const hoverTargets = 'a, button, .btn-primary, .btn-ghost, .featured-card, .compact-card, .timeline-card, .cert-card, .bento-card, .stat, .social-bar a, .timeline-arrow';
+    const hoverTargets = 'a, button, .btn-primary, .btn-ghost, .featured-card, .compact-card, .timeline-card, .achievement-card, .cert-card, .bento-card, .stat, .social-bar a, .timeline-arrow';
     document.querySelectorAll(hoverTargets).forEach(el => {
         el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
         el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
@@ -166,6 +203,28 @@ function typeRole() {
 
 typeRole();
 
+// ═══════ 3. ENCOURAGEMENT NOTE ═══════
+const encouragementMessage = document.getElementById('encouragementMessage');
+const encouragementMessages = [
+    'Keep showing up. Your next idea matters.',
+    'Small steps today. Big things tomorrow.',
+    'Keep learning. Keep building.',
+    'You are closer than you think.'
+];
+
+if (encouragementMessage && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let encouragementIndex = 0;
+
+    window.setInterval(() => {
+        encouragementMessage.classList.add('changing');
+        window.setTimeout(() => {
+            encouragementIndex = (encouragementIndex + 1) % encouragementMessages.length;
+            encouragementMessage.textContent = encouragementMessages[encouragementIndex];
+            encouragementMessage.classList.remove('changing');
+        }, 350);
+    }, 4600);
+}
+
 
 // ═══════ 4. NAVIGATION — Hide/Show + Active + Logo ═══════
 const nav = document.getElementById('mainNav');
@@ -175,9 +234,16 @@ const allSections = document.querySelectorAll('section, header');
 let lastScrollY = 0;
 let ticking = false;
 
+function updateScrollProgress() {
+    const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0;
+    document.documentElement.style.setProperty('--scroll-progress', `${progress}%`);
+}
+
 function handleScroll() {
     const scrollY = window.scrollY;
     const heroHeight = document.getElementById('hero')?.offsetHeight || 600;
+    updateScrollProgress();
 
     // Hide/show on scroll direction
     if (scrollY > lastScrollY && scrollY > 200) {
@@ -227,6 +293,8 @@ window.addEventListener('scroll', () => {
         ticking = true;
     }
 });
+window.addEventListener('resize', updateScrollProgress);
+updateScrollProgress();
 
 
 // ═══════ 5. SCROLL REVEAL — Staggered ═══════
@@ -327,6 +395,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
     const RING1_SPEED = 0.0003;
     const RING2_SPEED = 0.00022;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     let startTime = null;
 
@@ -362,7 +431,9 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
             item.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
         });
 
-        requestAnimationFrame(animateOrbit);
+        if (!prefersReducedMotion) {
+            requestAnimationFrame(animateOrbit);
+        }
     }
 
     requestAnimationFrame(animateOrbit);
